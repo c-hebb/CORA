@@ -22,6 +22,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Login extends AppCompatActivity {
+    // Variable Setup
     EditText mEmail, mPassword;
     Button mLoginButton;
     TextView mCreateButton, mForgotPasswordButton;
@@ -32,6 +33,7 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        // Define Variables based on Field Inputs
         mEmail = findViewById(R.id.Email);
         mPassword = findViewById(R.id.password);
         fAuth = FirebaseAuth.getInstance();
@@ -39,9 +41,11 @@ public class Login extends AppCompatActivity {
         mCreateButton = findViewById(R.id.register_text);
         mForgotPasswordButton = findViewById(R.id.forgotPassword);
 
+        //On Login Button Click: Validate Data, etc.
         mLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Input Field Validation
                 String email = mEmail.getText().toString().trim();
                 String password = mPassword.getText().toString().trim();
 
@@ -60,7 +64,6 @@ public class Login extends AppCompatActivity {
                 }
 
                 //Authenticate User
-
                 fAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -72,11 +75,10 @@ public class Login extends AppCompatActivity {
                         }
                     }
                 });
-
-
             }
         });
 
+        //If Need To Register: Send to Register Page || "Create Account"
         mCreateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -84,15 +86,18 @@ public class Login extends AppCompatActivity {
             }
         });
 
+        //If Forgot Password: Ask for Email and Send New Password Link
         mForgotPasswordButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Creates an Alert to ask Yes/No if they need to reset password: If yes, Enter email.
                 EditText resetMail = new EditText(v.getContext());
                 AlertDialog.Builder passwordResetDialog = new AlertDialog.Builder(v.getContext());
                 passwordResetDialog.setTitle("Reset Password?");
                 passwordResetDialog.setMessage("Enter Your Email.");
                 passwordResetDialog.setView(resetMail);
 
+                //If Chooses Yes: Enter Email and Send Password Reset Email
                 passwordResetDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -112,6 +117,7 @@ public class Login extends AppCompatActivity {
                     }
                 });
 
+                // If No: Closes the Dialog.
                 passwordResetDialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -119,11 +125,10 @@ public class Login extends AppCompatActivity {
                     }
                 });
 
+                //Shows Dialog
                 passwordResetDialog.create().show();
 
             }
-
         });
-
     }
 }
