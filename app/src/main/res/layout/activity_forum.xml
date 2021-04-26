@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <RelativeLayout
+            android:layout_marginTop="32dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text = "Forum"
+                android:textColor= "#000000"
+                android:textSize="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:text = "New Entry"
+                android:textColor= "#000000"
+                android:textSize="20dp"
+                android:layout_marginTop="80dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+
+            <Button
+                android:id="@+id/SaveEntryBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="300dp"
+                android:layout_marginRight="20dp"
+                android:text="Save Entry" />
+
+            <Button
+                android:id="@+id/BackBtnid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="300dp"
+                android:layout_marginRight="20dp"
+                android:text="Back" />
+
+            <EditText
+                android:id="@+id/NameTxt"
+                android:hint="Name"
+                android:layout_width="match_parent"
+                android:layout_marginTop="120dp"
+                android:layout_height="50dp"/>
+            <EditText
+                android:id="@+id/DateTxt"
+                android:hint="Date"
+                android:layout_width="match_parent"
+                android:layout_marginTop="190dp"
+                android:layout_height="50dp"/>
+            <EditText
+                android:id="@+id/MessageTxt"
+                android:hint="Message"
+                android:layout_width="match_parent"
+                android:layout_marginTop="270dp"
+                android:layout_height="50dp"/>
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:text = "View Forums"
+            android:textColor= "#000000"
+            android:textSize="20dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/NameId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Name" />
+
+        <TextView
+            android:id="@+id/DateId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:hint="Date" />
+
+        <TextView
+            android:id="@+id/MessageId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:hint="Message" />
+
+
+    </LinearLayout>
+
+</ScrollView>
