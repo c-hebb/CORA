@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         //This will switch to the Edit Profile page when Edit Profile button is clicked.
         editProBtn.setOnClickListener(v -> {
             Toast.makeText(MainActivity.this, "Switched to Edit Profile page", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(getApplicationContext(),Forum.class)); //Change Forum.class to EditProfile.class
+            startActivity(new Intent(getApplicationContext(),Profile.class));
         });
 
 
