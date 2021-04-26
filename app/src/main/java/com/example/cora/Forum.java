@@ -87,7 +87,7 @@ public class Forum extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(Forum.this, "Back to Main", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getApplicationContext(),MainMenu.class));
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
 
             }
         });
