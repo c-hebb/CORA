@@ -54,11 +54,8 @@ public class MainActivity extends AppCompatActivity {
 
         //This will switch to the report occurrence page when btn is clicked
         reportBtn.setOnClickListener(v -> {
-
-            Toast.makeText(MainActivity.this, "Switched to Report Occurrence Page", Toast.LENGTH_SHORT).show();
-            Intent e = new Intent(MainActivity.this, MainActivity.class); // Change to ReportOccurrence
-            startActivity(e);
-
+            Toast.makeText(MainActivity.this, "Switched to Report Occurence Page", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(getApplicationContext(),ReportOccurrence.class)); //Change Forum.class to ReportOccurence.class
         });
 
         //This will switch to the Edit Profile page when Edit Profile button is clicked.
