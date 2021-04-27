@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this, "Calling 911", Toast.LENGTH_SHORT).show();
 
             Intent callIntent = new Intent(Intent.ACTION_DIAL);
-            callIntent.setData(Uri.parse("tel:123456789"));
+            callIntent.setData(Uri.parse("tel:911"));
             startActivity(callIntent);
         });
 
