@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(R.style.Theme_CORA);
         setContentView(R.layout.activity_main_menu);
 
         //Connecting each var to the buttons on screen
@@ -32,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         profileBtn = findViewById(R.id.EditProfileid);
 
 
-        //This will swicth to the login page when logout button is clicked.
+        //This will switch to the login page when logout button is clicked.
         logoutBtn.setOnClickListener(v -> {
             Toast.makeText(MainActivity.this, "Logged Out", Toast.LENGTH_SHORT).show();
             FirebaseAuth.getInstance().signOut();
@@ -48,10 +49,13 @@ public class MainActivity extends AppCompatActivity {
             startActivity(a);
         });
 
-        //This will switch to the report occurence page when btn is clicked
+        //This will switch to the report occurrence page when btn is clicked
         reportBtn.setOnClickListener(v -> {
-            Toast.makeText(MainActivity.this, "Switched to Report Occurence Page", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(getApplicationContext(),Forum.class)); //Change Forum.class to ReportOccurence.class
+
+            Toast.makeText(MainActivity.this, "Switched to Report Occurrence Page", Toast.LENGTH_SHORT).show();
+            Intent e = new Intent(MainActivity.this, MainActivity.class); // Change to ReportOccurrence
+            startActivity(e);
+
         });
 
         //This will switch to the Edit Profile page when Edit Profile button is clicked.

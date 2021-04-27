@@ -31,6 +31,7 @@ public class Profile extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(R.style.Theme_CORA);
         setContentView(R.layout.activity_main);
 
         name = findViewById(R.id.viewFullName);

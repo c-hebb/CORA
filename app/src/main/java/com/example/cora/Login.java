@@ -31,6 +31,7 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(R.style.Theme_CORA);
         setContentView(R.layout.activity_login);
 
         // Define Variables based on Field Inputs
