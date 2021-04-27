@@ -9,6 +9,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -24,8 +26,53 @@ public class Profile extends AppCompatActivity {
     FirebaseFirestore fStore;
     FirebaseUser user;
     Button changeBtn;
-    EditText name, ID, address, email, profession;
+    TextView name, ID, address, email, profession;
 
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        name = findViewById(R.id.viewFullName);
+        ID = findViewById(R.id.viewUTAID);
+        address = findViewById(R.id.viewAddress);
+        email = findViewById(R.id.viewEmail);
+        profession = findViewById(R.id.viewProfession);
+        changeBtn = findViewById(R.id.editProfileBtn);
+
+
+        fAuth = FirebaseAuth.getInstance();
+        fStore = FirebaseFirestore.getInstance();
+        user = fAuth.getCurrentUser();
+
+        DocumentReference ref = fStore.collection("users").document(user.getUid());
+        ref.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException error) {
+                if (documentSnapshot.exists()) {
+                    name.setText(documentSnapshot.getString("FullName"));
+                    ID.setText(documentSnapshot.getString("UTAid"));
+                    address.setText(documentSnapshot.getString("Address"));
+                    email.setText(documentSnapshot.getString("Email"));
+                    profession.setText(documentSnapshot.getString("Profession"));
+                } else {
+                    Log.d(TAG, "User does not exist");
+                }
+            }
+        });
+
+        changeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(Profile.this, "Edit Profile", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getApplicationContext(), EditProfile.class));
+            }
+        });
+
+    }
+}
+
+    /*
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +90,7 @@ public class Profile extends AppCompatActivity {
         user = fAuth.getCurrentUser();
 
         //gets the users info to display on profile page
+
         DocumentReference ref = fStore.collection("users").document(user.getUid());
         ref.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
@@ -58,9 +106,10 @@ public class Profile extends AppCompatActivity {
                     Log.d(TAG, "User does not exist");
                 }
             }
-        });
+        }); */
 
         //throw EditProfile the current users data
+        /*
        changeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,6 +121,4 @@ public class Profile extends AppCompatActivity {
                 i.putExtra("profession", profession.getText().toString());
                 startActivity(i);
             }
-        });
-    }
-}
+        });*/

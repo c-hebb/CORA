@@ -7,6 +7,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class MainActivity extends AppCompatActivity {
 
 
@@ -14,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     Button logoutBtn;
     Button forumBtn;
     Button reportBtn;
-    Button editProBtn;
+    Button profileBtn;
 
 
     @Override
@@ -22,19 +24,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
 
-
         //Connecting each var to the buttons on screen
-
 
         logoutBtn = findViewById(R.id.Logoutid);
         forumBtn = findViewById(R.id.Forumid);
         reportBtn = findViewById(R.id.ReportOccurenceid);
-        editProBtn = findViewById(R.id.EditProfileid);
+        profileBtn = findViewById(R.id.EditProfileid);
 
 
         //This will swicth to the login page when logout button is clicked.
         logoutBtn.setOnClickListener(v -> {
             Toast.makeText(MainActivity.this, "Logged Out", Toast.LENGTH_SHORT).show();
+            FirebaseAuth.getInstance().signOut();
             startActivity(new Intent(getApplicationContext(),Login.class));
         });
 
@@ -54,9 +55,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //This will switch to the Edit Profile page when Edit Profile button is clicked.
-        editProBtn.setOnClickListener(v -> {
-            Toast.makeText(MainActivity.this, "Switched to Edit Profile page", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(getApplicationContext(),Profile.class));
+        profileBtn.setOnClickListener(v -> {
+            Toast.makeText(MainActivity.this, "Switched to Profile Page", Toast.LENGTH_SHORT).show();
+            Intent b = new Intent(MainActivity.this, Profile.class);
+            startActivity(b);
         });
 
 

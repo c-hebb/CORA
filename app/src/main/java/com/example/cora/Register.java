@@ -57,10 +57,10 @@ public class Register extends AppCompatActivity {
         fStore = FirebaseFirestore.getInstance();
 
         //Checks if User is already logged in, if so takes to Main page
-        /*if(fAuth.getCurrentUser() != null) {
+        if(fAuth.getCurrentUser() != null) {
             startActivity(new Intent(getApplicationContext(), MainActivity.class));
             finish();
-        }*/
+        }
 
         mRegisterButton.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -1,6 +1,7 @@
 package com.example.cora;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
@@ -17,10 +18,15 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 
 import java.util.HashMap;
 import java.util.Map;
+
+//TODO: Confirm BUtton Not Redirecting to Profile
 
 public class EditProfile extends AppCompatActivity {
     public static final String TAG = "TAG";
@@ -56,6 +62,23 @@ public class EditProfile extends AppCompatActivity {
         editProfession = findViewById(R.id.editProfession);
         saveChange = findViewById(R.id.saveChange);
 
+        //fill the textViews with the current user data
+        DocumentReference ref = fStore.collection("users").document(user.getUid());
+        ref.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException error) {
+                if (documentSnapshot.exists()) {
+                    editName.setText(documentSnapshot.getString("FullName"));
+                    editStudentID.setText(documentSnapshot.getString("UTAid"));
+                    editAddress.setText(documentSnapshot.getString("Address"));
+                    editEmail.setText(documentSnapshot.getString("Email"));
+                    editProfession.setText(documentSnapshot.getString("Profession"));
+                } else {
+                    Log.d(TAG, "User does not exist");
+                }
+            }
+        });
+
         //save the user data changes
         saveChange.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -89,6 +112,7 @@ public class EditProfile extends AppCompatActivity {
                             }
                         });
                         Toast.makeText(EditProfile.this, "Email is Updated", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(getApplicationContext(), Profile.class));
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
@@ -100,12 +124,6 @@ public class EditProfile extends AppCompatActivity {
 
         });
 
-        //fill the textViews with the current user data
-        editName.setText(fullName);
-        editStudentID.setText(studentID);
-        editAddress.setText(address);
-        editProfession.setText(profession);
-        editEmail.setText(email);
 
         //Test
         Log.d(TAG, "onCreate" + fullName + " " + email + " " + studentID + " " + address + " " + profession);
