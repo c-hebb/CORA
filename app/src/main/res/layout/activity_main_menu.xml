@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:background="#CCD0D6">
 
     <LinearLayout
         android:orientation="vertical"
@@ -34,26 +35,29 @@
 
                 android:layout_alignParentRight="true"
                 android:src="@drawable/cora"
-                android:layout_width="62dp"
+                android:layout_width="100dp"
                 android:layout_height="62dp" />
 
             <Button
                 android:id="@+id/ReportOccurenceid"
                 android:layout_marginTop="150dp"
-                android:text="Report Occurence"
+                android:text="Report Occurrence"
                 android:layout_width="match_parent"
+                android:backgroundTint="#122D7C"
                 android:layout_height="wrap_content"/>
             <Button
                 android:id="@+id/Forumid"
                 android:layout_marginTop="250dp"
                 android:text="Forum"
                 android:layout_width="match_parent"
+                android:backgroundTint="#122D7C"
                 android:layout_height="wrap_content"/>
 
             <Button
                 android:id="@+id/EditProfileid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:backgroundTint="#122D7C"
                 android:layout_marginTop="350dp"
                 android:text="Profile" />
             <Button
@@ -61,60 +65,27 @@
                 android:text="Logout"
                 android:layout_marginTop="550dp"
                 android:layout_width="wrap_content"
+                android:backgroundTint="#122D7C"
                 android:layout_height="wrap_content"/>
 
+            <Button
+                android:id="@+id/button911"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_below="@+id/EditProfileid"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="200dp"
+                android:layout_marginLeft="200dp"
+                android:layout_marginTop="100dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginRight="50dp"
+                android:backgroundTint="#8B971006"
+                android:text="911" />
 
 
         </RelativeLayout>
-        <!--
-                <GridLayout
-                    android:rowCount="2"
-                    android:columnCount="2"
-                    android:alignmentMode="alignMargins"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
 
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_columnWeight="1"
-                        android:layout_rowWeight="1"
-                        app:cardElevation="6dp"
-                        app:cardCornerRadius="12dp"
-                        android:layout_margin="12dp"
-                        >
-
-                        <LinearLayout
-                            android:orientation="vertical"
-                            android:padding="16dp"
-                            android:gravity="center"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
-                            <ImageView
-
-                                android:src="@drawable/reporto"
-                                android:layout_width="80dp"
-                                android:layout_height="80dp" />
-                            <TextView
-                                android:layout_marginTop="12dp"
-                                android:textColor="#000000"
-                                android:text="Report Occurence"
-                                android:textSize="20dp"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content" />
-
-
-                        </LinearLayout>
-
-                    </androidx.cardview.widget.CardView>
-
-
-
-
-
-                </GridLayout>
-        -->
     </LinearLayout>
 
 </ScrollView>
