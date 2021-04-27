@@ -18,6 +18,7 @@ public class ReportOccurrence extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(R.style.Theme_CORA);
         setContentView(R.layout.activity_report_occurrence);
 
         Title = findViewById(R.id.Title);
