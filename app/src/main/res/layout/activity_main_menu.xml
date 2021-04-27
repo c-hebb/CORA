@@ -40,14 +40,14 @@
 
             <Button
                 android:id="@+id/ReportOccurenceid"
-                android:layout_marginTop="150dp"
+                android:layout_marginTop="100dp"
                 android:text="Report Occurrence"
                 android:layout_width="match_parent"
                 android:backgroundTint="#122D7C"
                 android:layout_height="wrap_content"/>
             <Button
                 android:id="@+id/Forumid"
-                android:layout_marginTop="250dp"
+                android:layout_marginTop="200dp"
                 android:text="Forum"
                 android:layout_width="match_parent"
                 android:backgroundTint="#122D7C"
@@ -58,8 +58,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#122D7C"
-                android:layout_marginTop="350dp"
+                android:layout_marginTop="300dp"
                 android:text="Profile" />
+
+            <Button
+                android:id="@+id/mapId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="400dp"
+                android:backgroundTint="#122D7C"
+                android:text="Map" />
+
             <Button
                 android:id="@+id/Logoutid"
                 android:text="Logout"
@@ -77,7 +86,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_marginStart="200dp"
                 android:layout_marginLeft="200dp"
-                android:layout_marginTop="100dp"
+                android:layout_marginTop="150dp"
                 android:layout_marginEnd="50dp"
                 android:layout_marginRight="50dp"
                 android:backgroundTint="#8B971006"

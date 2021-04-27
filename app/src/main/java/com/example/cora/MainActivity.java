@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     Button reportBtn;
     Button profileBtn;
     Button call911;
+    Button mapBtn;
 
 
     @Override
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         reportBtn = findViewById(R.id.ReportOccurenceid);
         profileBtn = findViewById(R.id.EditProfileid);
         call911 = findViewById(R.id.button911);
+        mapBtn = findViewById(R.id.mapId);
 
 
         //This will switch to the login page when logout button is clicked.
@@ -63,6 +65,12 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this, "Switched to Profile Page", Toast.LENGTH_SHORT).show();
             Intent b = new Intent(MainActivity.this, Profile.class);
             startActivity(b);
+        });
+
+        mapBtn.setOnClickListener(v -> {
+            Toast.makeText(MainActivity.this, "Switched to Map", Toast.LENGTH_SHORT).show();
+            Intent g = new Intent(MainActivity.this, MapsActivity.class);
+            startActivity(g);
         });
 
         //911 Button
