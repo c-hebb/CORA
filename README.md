@@ -24,6 +24,6 @@ Caleb Hebb
 
 Tristan Johnson
 
-Sergio Guerreiro
+Sergio Guerrero
 
 Min Kha Do
