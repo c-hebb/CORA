@@ -41,7 +41,7 @@
             <Button
                 android:id="@+id/ReportOccurenceid"
                 android:layout_marginTop="150dp"
-                android:text="Report Occurence"
+                android:text="Report Occurrence"
                 android:layout_width="match_parent"
                 android:backgroundTint="#122D7C"
                 android:layout_height="wrap_content"/>

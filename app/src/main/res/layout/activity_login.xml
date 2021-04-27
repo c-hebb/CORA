@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#03A9F4"
+    android:background="#CCD0D6"
     tools:context=".Login">
 
 
@@ -47,7 +47,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/droid_sans_mono"
         android:text="Login To Your Account"
-        android:textColor="#CBFFFFFF"
+        android:textColor="#CB4A4949"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -79,7 +79,8 @@
         android:layout_marginEnd="16dp"
         android:background="#FFFFFF"
         android:text="Login"
-        android:textColor="#03A9F4"
+        android:textColor="#FFF"
+        android:backgroundTint="#122D7C"
         app:iconTint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -92,7 +93,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="13dp"
         android:text="Create Account"
-        android:textColor="#FFFFFF"
+        android:textColor="#CB4A4949"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginButton" />
@@ -103,7 +104,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="Forgot Password?"
-        android:textColor="#FFFFFF"
+        android:textColor="#CB4A4949"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -119,12 +120,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/cora" />
-
-    <View
-        android:id="@+id/view"
-        android:layout_width="411dp"
-        android:layout_height="199dp"
-        tools:layout_editor_absoluteX="-3dp"
-        tools:layout_editor_absoluteY="-2dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
