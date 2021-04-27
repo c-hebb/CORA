@@ -68,6 +68,20 @@
                 android:backgroundTint="#122D7C"
                 android:layout_height="wrap_content"/>
 
+            <Button
+                android:id="@+id/button911"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_below="@+id/EditProfileid"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="200dp"
+                android:layout_marginLeft="200dp"
+                android:layout_marginTop="100dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginRight="50dp"
+                android:backgroundTint="#8B971006"
+                android:text="911" />
 
 
         </RelativeLayout>

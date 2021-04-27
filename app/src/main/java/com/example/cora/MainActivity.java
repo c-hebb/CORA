@@ -1,6 +1,7 @@
 package com.example.cora;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.Toast;
@@ -17,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     Button forumBtn;
     Button reportBtn;
     Button profileBtn;
+    Button call911;
 
 
     @Override
@@ -31,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         forumBtn = findViewById(R.id.Forumid);
         reportBtn = findViewById(R.id.ReportOccurenceid);
         profileBtn = findViewById(R.id.EditProfileid);
+        call911 = findViewById(R.id.button911);
 
 
         //This will switch to the login page when logout button is clicked.
@@ -65,7 +68,14 @@ public class MainActivity extends AppCompatActivity {
             startActivity(b);
         });
 
+        //911 Button
+        call911.setOnClickListener(v -> {
+            Toast.makeText(MainActivity.this, "Calling 911", Toast.LENGTH_SHORT).show();
 
+            Intent callIntent = new Intent(Intent.ACTION_DIAL);
+            callIntent.setData(Uri.parse("tel:123456789"));
+            startActivity(callIntent);
+        });
 
 
     }
