@@ -20,10 +20,10 @@ This application was developed by Team 11 for CSE3310.
 
 Developed and presented by:
 
-Caleb Hebb
+Caleb H.
 
-Tristan Johnson
+Tristan J.
 
-Sergio Guerrero
+Sergio G.
 
-Min Kha Do
+Min Kha D.
